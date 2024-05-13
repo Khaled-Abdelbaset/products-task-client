@@ -29,9 +29,9 @@
       <div class="p-2">
         <select :class="{'border-danger': productType === 'Type Switcher' && formSubmitted}" class="w-75 input-group-text m-auto" id="productType" v-model="productType">
           <option selected disabled>Type Switcher</option>
-          <option value="furniture">Furniture</option>
-          <option value="dvd">DVD</option>
-          <option value="book">Book</option>
+          <option value="Furniture">Furniture</option>
+          <option value="DVD">DVD</option>
+          <option value="Book">Book</option>
         </select>
       </div>
 

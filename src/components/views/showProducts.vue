@@ -9,7 +9,7 @@
           class="btn btn-danger"
           @click="deleteProducts()"
         >
-          MASS DELETE
+        MASS DELETE
         </button>
       </div>
 
