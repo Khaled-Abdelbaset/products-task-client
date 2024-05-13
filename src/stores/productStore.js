@@ -3,8 +3,8 @@ import router from "@/router"
 
 export const useProductStore = defineStore("products", {
   state: () => ({
-    baseURL: "http://localhost", // Base URL for API requests
-    // baseURL: "https://earnest-fastener.000webhostapp.com", // 000webhostapp URL for API requests
+    // baseURL: "http://localhost", // localhost URL for API requests
+    baseURL: "https://earnest-fastener.000webhostapp.com", // 000webhostapp URL for API requests
   }),
   actions: {
     // Action to fetch all products
