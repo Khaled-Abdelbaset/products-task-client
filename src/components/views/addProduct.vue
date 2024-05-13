@@ -6,12 +6,7 @@
       <strong class="mb-0 text-capitalize">{{ errorMessage }}</strong>
       <button type="button" class="btn-close" @click="clearErrorMessage" aria-label="Close" style="height: auto;"></button>
     </div>
-    <header class="row g-0 p-3 mb-3 justify-content-between align-items-center border-bottom border-2 border-black">
-      <h4 class="w-50 mb-0 fw-bold">Product Add</h4>
-      <ul class="w-50 d-flex justify-content-end">
-        <li><router-link :to="{name:'productsList'}" class="btn btn-danger">Cancel</router-link></li>
-      </ul>
-    </header>
+    
     <form @submit.prevent="addProduct" id="product_form" class="col-10 col-md-8">
       <!-- Product SKU Input -->
       <div class="p-2">

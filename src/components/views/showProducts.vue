@@ -1,17 +1,17 @@
 <template>
   <!-- Section for displaying all products -->
   <section class="row g-0 all-products">
-    <header class="row g-0 p-3 mb-3 justify-content-between align-items-center border-bottom border-2 border-black">
-      <h4 class="w-50 mb-0 fw-bold">Product List</h4>
-      <ul class="w-50 d-flex justify-content-end">
-        <li><router-link :to="{name: 'addProduct'}" class="btn btn-secondary">ADD</router-link></li>
-        <li><button id="delete-product-btn" class="btn btn-danger" @click="deleteProducts()">MASS DELETE</button></li>
-      </ul>
-    </header>
     <div>
-      <!-- Button for mass delete
+      <!-- Button for mass delete -->
       <div class="text-end">
-      </div> -->
+        <button 
+          id="delete-product-btn"
+          class="btn btn-danger"
+          @click="deleteProducts()"
+        >
+          MASS DELETE
+        </button>
+      </div>
 
       <!-- Loading indicator -->
       <template v-if="isLoading">
