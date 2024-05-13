@@ -4,7 +4,6 @@ import router from "@/router"
 export const useProductStore = defineStore("products", {
   state: () => ({
     baseURL: "http://localhost", // Base URL for API requests
-    baseURL: "http://earnest-fastener.000webhostapp.com", // Base URL for API requests
   }),
   actions: {
     // Action to fetch all products
