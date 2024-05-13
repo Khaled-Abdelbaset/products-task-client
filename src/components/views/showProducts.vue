@@ -6,8 +6,6 @@
       <div class="text-end">
         <button 
           id="delete-product-btn"
-          v-if="allProducts.length" 
-          :disabled="!hasDeletedIDs" 
           class="btn btn-danger"
           @click="deleteProducts()"
         >
@@ -64,9 +62,10 @@ export default {
   methods: {
     // Method to delete selected products
     async deleteProducts() {
-      this.isLoading = true;
-      await this.productStore.deleteProducts(this.deletedProductsIDs);
+      let result = await this.productStore.deleteProducts(this.deletedProductsIDs);
+      if(!result) return;
       this.deletedProductsIDs = {};
+      this.isLoading = true;
       this.allProducts = await this.productStore.getAllProducts();
       this.isLoading = false;
     },
@@ -86,12 +85,6 @@ export default {
       }).format(price);
     },
   },
-  computed: {
-    // Check if any products are selected for deletion
-    hasDeletedIDs() {
-      return Object.keys(this.deletedProductsIDs).length > 0;
-    },
-  }
 }
 </script>
 

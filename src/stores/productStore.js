@@ -4,7 +4,6 @@ import router from "@/router"
 export const useProductStore = defineStore("products", {
   state: () => ({
     baseURL: "http://localhost", // Base URL for API requests
-    baseURL: "http://earnest-fastener.000webhostapp.com", // Base URL for API requests
   }),
   actions: {
     // Action to fetch all products
@@ -79,19 +78,23 @@ export const useProductStore = defineStore("products", {
     },
 
     // Action to delete selected products
-    async deleteProducts(deletedProducts) {
+    async deleteProducts(deletedProductsIDs) {
+      if(!Object.entries(deletedProductsIDs).length) {
+        return false;
+      }
       try {
         const response = await fetch(`${this.baseURL}/products`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(deletedProducts),
+          body: JSON.stringify(deletedProductsIDs),
         });
         if (!response.ok) {
           const message = await response.json();
           throw new Error("server responded with an error: " + message.error_message);
         }
+        return true;
       } catch(error) {
         router.push({ path: "/servererror" });
       }
