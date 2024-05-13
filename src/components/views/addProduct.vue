@@ -99,11 +99,11 @@
     computed: {
       // Compute the selected component based on product type
       selectedType() {
-        if (this.productType === "furniture") {
+        if (this.productType === "Furniture") {
           return 'furnitureComponent';
-        } else if (this.productType === "book") {
+        } else if (this.productType === "Book") {
           return 'bookComponent';
-        } else if (this.productType === "dvd") {
+        } else if (this.productType === "DVD") {
           return 'dvdComponent';
         }
       }
